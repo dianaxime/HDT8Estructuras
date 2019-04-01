@@ -12,6 +12,11 @@ import java.util.Vector;
  * @author DIANA
  * @param <E>
  */
+
+//Diana Ximena de Leon Figueroa 18607
+//Fatima Jazmin Albeño Barrios 18060
+
+
 public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
     protected Vector<E> data; // the data, kept in heap order
 

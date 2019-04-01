@@ -5,14 +5,21 @@
  */
 package hdt8;
 
+import java.text.Collator;
+
 /**
  *
  * @author DIANA
  */
-public class NodoPaciente {
+
+//Diana Ximena de Leon Figueroa 18607
+//Fatima Jazmin Albeño Barrios 18060
+
+public class NodoPaciente implements Comparable<NodoPaciente>{
     String nombre;
     String descrip;
     String prioridad;
+    Collator comparador = Collator.getInstance();
     
     public NodoPaciente(String name, String desc,String prio){
         nombre=name;
@@ -30,5 +37,11 @@ public class NodoPaciente {
     }
     public String data(){
         return this.nombre + ", "+ this.descrip + ", " + this.prioridad;
+    }
+
+    @Override
+    public int compareTo(NodoPaciente o) {
+        comparador.setStrength(Collator.SECONDARY);
+        return comparador.compare(this.prioridad,o.getprior());
     }
 }
